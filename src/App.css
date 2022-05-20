@@ -1,38 +1,160 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
+
+:root {
+  --primary-color: #f0f8ff;
+  --secondary-color: #08c7d1;
+  --box-shadow: 4px 5px 10px 5px rgba(35, 236, 243, 0.5);
+}
+
+html,
+body {
+  font-family: "Merriweather", sans-serif;
+  height: 100vh;
+  margin: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    url("./assets/images/city-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: var(--primary-color);
+}
+
+.container {
+  background: transparent;
+  height: 100vh;
+  width: 100vw;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.search-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: 1em auto 2em;
+  padding: 20px 5%;
+  border-radius: 10px;
+  opacity: 0.9;
+  background-color: var(--primary-color);
+  box-shadow: 1px 2px 5px 2px rgba(35, 236, 243, 0.6);
+  cursor: pointer;
+}
+
+.search-box:hover {
+  opacity: 1;
+}
+
+.search {
+  background: transparent;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+}
+
+.city {
+  background: transparent;
+  border: transparent;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 6%;
+  position: relative;
+}
+
+.city:hover {
+  animation: pulse;
+  animation-duration: 3s;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+p,
+.city-temp span {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.city-temp {
+  font-size: 4rem;
+  font-weight: bold;
   text-align: center;
+  margin-top: -20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.city-temp .wrap {
+  margin-top: -40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.city-temp .wrap span {
+  padding: 0 20px;
+  font-weight: 700;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.city-temp .second-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.city-temp .second-wrap span {
+  margin: 0 20px;
+  font-weight: 500;
+}
+
+.city sup {
+  font-size: 0.6em;
+}
+
+.city-name {
+  font-size: 2.2em;
+}
+
+.city-name sup {
+  padding: 0.2em 0.6em;
+  margin-left: 0.2em;
+  border-radius: 30px;
+  background: var(--secondary-color);
+}
+
+.city-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.date {
+  position: absolute;
+  bottom: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.date span {
+  font-size: 12px;
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 600px) {
+  .city-temp .second-wrap {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .city-temp .second-wrap span {
+    margin: 10px auto;
   }
 }
